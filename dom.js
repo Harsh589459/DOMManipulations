@@ -90,7 +90,101 @@ input.value="Hello";
 // }
 
 //Sharpner assignment 6
-let items = document.querySelectorAll('li');
-items[1].style.backgroundColor='green';
-items[2].style.display='none';
+// let items = document.querySelectorAll('li');
+// items[1].style.backgroundColor='green';
+// items[2].style.display='none';
+
+
+//TRAVERSING THE DOM//
+
+let itemList = document.querySelector('#items');
+//parentNode
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.backgroundColor='#f4f4f4';
+// console.log(itemList.parentNode.parentNode)
+
+
+//parent node and parentelement are almost same
+//parentElement
+// console.log(itemList.parentElement);
+// itemList.parentElement.style.backgroundColor='#f4f4f4';
+// console.log(itemList.parentElement.parentElement)
+
+//childNodes
+// console.log(itemList.childNodes)
+// console.log(itemList.children);
+// console.log(itemList.children[1])
+// itemList.children[1].style.backgroundColor='yellow';
+
+// //firstChild
+// console.log(itemList.firstChild);
+
+// //firstElementChild
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent='Hello 1'
+
+// //lastChild
+// console.log(itemList.lastChild);
+
+// //lastElementChild
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent='Hello 1'
+
+
+// //nextSibling
+// console.log(itemList.nextSibling)
+
+// //nextElementSibling
+// console.log(itemList.nextEleementSibling)
+
+// //previous sibling
+// console.log(itemList.previousSibling)
+
+// //previousElementSibling
+// console.log(itemList.previousEleementSibling)
+// itemList.previousElementSibling.style.color='green';
+
+
+
+//createElement
+
+// //create a div
+// let newDiv = document.createElement('div');
+
+// //add class
+// newDiv.className='hello';
+
+// //add id
+// newDiv.id='hello1';
+
+// //add attribute
+// newDiv.setAttribute('title','hello div');
+
+// //create a text node
+// let newDivText = document.createTextNode('Hello World');
+
+// //Add text to div
+// newDiv.appendChild(newDivText);
+
+// let container = document.querySelector('header .container');
+// let h1 = document.querySelector('header h1');
+// console.log(newDiv);
+// container.insertBefore(newDiv, h1);
+
+
+//Assignemnt - 7
+
+let newDiv = document.createElement('div');
+newDiv.className='hello';
+
+let newDivText = document.createTextNode('HEllo');
+newDiv.appendChild(newDivText);
+
+let container = document.querySelector('header .container');
+let h1 = document.querySelector('header h1');
+container.insertBefore(newDiv, h1);
+
+let item = document.querySelector('ul');
+let li = document.querySelector('.list-group-item')
+item.insertBefore(newDiv , li)
 
