@@ -44,3 +44,25 @@
 
   
 
+// GET ELEMENTS BY TAG NAME
+
+  let li = document.getElementsByTagName('li');
+  console.log(li);
+  li[1].textContent='Hello 2';
+//   li[1].style.fontWeight = 'bold'
+  li[2].style.backgroundColor='green';
+
+  for(let i=0;i<li.length;i++){
+    li[i].style.fontWeight='bold';
+  }
+
+
+//QUERY SELECTOR//
+let header = document.querySelector('#main-header');
+header.style.borderBottom ='solid 4px #ccc'
+//it changes input value content
+let input = document.querySelector('input');
+input.value="Hello";
+//it changes button content
+let submit = document.querySelector('input[type="submit"]');
+submit.value="SEND";
