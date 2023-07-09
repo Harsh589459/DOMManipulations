@@ -44,17 +44,17 @@
 
   
 
-// GET ELEMENTS BY TAG NAME
+// // GET ELEMENTS BY TAG NAME
 
-  let li = document.getElementsByTagName('li');
-  console.log(li);
-  li[1].textContent='Hello 2';
-//   li[1].style.fontWeight = 'bold'
-  li[2].style.backgroundColor='green';
+//   let li = document.getElementsByTagName('li');
+//   console.log(li);
+//   li[1].textContent='Hello 2';
+// //   li[1].style.fontWeight = 'bold'
+//   li[2].style.backgroundColor='green';
 
-  for(let i=0;i<li.length;i++){
-    li[i].style.fontWeight='bold';
-  }
+//   for(let i=0;i<li.length;i++){
+//     li[i].style.fontWeight='bold';
+//   }
 
 
 //QUERY SELECTOR//
@@ -64,5 +64,33 @@ header.style.borderBottom ='solid 4px #ccc'
 let input = document.querySelector('input');
 input.value="Hello";
 //it changes button content
-let submit = document.querySelector('input[type="submit"]');
-submit.value="SEND";
+// let submit = document.querySelector('input[type="submit"]');
+// submit.value="SEND";
+
+// var item = document.querySelector('.list-group-item');
+// item.style.color='red';
+
+// var lastItem = document.querySelector('.list-group-item:last-child');
+// lastItem.style.color='blue';
+
+// var secondItem = document.querySelector('.list-group-item:nth-child(2)');
+// secondItem.style.color='orange';
+
+//QUERYSELECTORALL//
+// let titles = document.querySelectorAll('.title');
+// console.log(titles);
+// titles[0].textContent='Hello';
+
+// let odd = document.querySelectorAll('li:nth-child(odd)')
+// let even = document.querySelectorAll('li:nth-child(even)')
+
+// for(let i =0;i<odd.length;i++){
+//     odd[i].style.backgroundColor='#f4f4f4';
+//     even[i].style.backgroundColor="#ccc";
+// }
+
+//Sharpner assignment 6
+let items = document.querySelectorAll('li');
+items[1].style.backgroundColor='green';
+items[2].style.display='none';
+
