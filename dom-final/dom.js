@@ -1,12 +1,15 @@
 let form = document.getElementById('addForm');
 let itemList = document.getElementById('items');
+let filter = document.getElementById('filter');
 
 //Form submit event
 form.addEventListener('submit',addItem);
 
 //delete event
-
 itemList.addEventListener('click',removeItems);
+
+//filter event
+filter.addEventListener('keyup',filterItems)
 
 //add item
 function addItem(e){
@@ -14,6 +17,7 @@ function addItem(e){
 
     //get input value
     let newItem = document.getElementById('item').value;
+    let desc = document.getElementById('desc').value;
 
     //create new li element
     let li = document.createElement('li');
@@ -23,6 +27,8 @@ function addItem(e){
 
     //add text node with input value
     li.appendChild(document.createTextNode(newItem))
+    li.appendChild(document.createTextNode('  '))
+    li.appendChild(document.createTextNode(desc))
 
     //create delete button element
     let deleteBtn = document.createElement('button');
@@ -55,4 +61,33 @@ function removeItems(e){
             itemList.removeChild(li);
         }
     }
+}
+
+
+//filter items
+
+function filterItems(e){
+    //convert text to lowercase 
+    let text = e.target.value.toLowerCase();
+
+    //getList
+    let items =itemList.getElementsByTagName('li');
+
+    //convert to array
+    Array.from(items).forEach(function(item){
+        console.log(item);
+        let itemName=item.firstChild.textContent;
+        let descriptionName=item.childNodes[2].textContent;
+        
+
+        console.log(descriptionName);
+        console.log(descriptionName);
+        
+        if(itemName.toLowerCase().indexOf(text)!=-1 || descriptionName.toLowerCase().indexOf(text)!=-1  ){
+            item.style.display='block';
+        }
+        else{
+            item.style.display='none';
+        }
+    })
 }
