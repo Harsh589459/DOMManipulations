@@ -23,7 +23,7 @@
 // console.log(document.getElementById('header-title'));
 // let headerTitle = document.getElementById('header-title');
 // let header = document.getElementById('main-header');
-console.log(headerTitle);
+// console.log(headerTitle);
 // headerTitle.textContent='Hello';
 // headerTitle.innerText="goodbye";
 // console.log(headerTitle.textContent);
@@ -32,3 +32,15 @@ console.log(headerTitle);
 
 
 //GET ELEMENTS BY CLASSNAME
+//   let items = document.getElementsByClassName('list-group-item');
+//   console.log(items);
+//   items[1].textContent='Hello 2';
+// //   items[1].style.fontWeight = 'bold'
+//   items[2].style.backgroundColor='green';
+
+//   for(let i=0;i<items.length;i++){
+//     items[i].style.fontWeight='bold';
+//   }
+
+  
+
