@@ -29,12 +29,33 @@ function saveBooking() {
 
       var bookingsList = document.getElementById("bookings-list");
       bookingsList.innerHTML = "";
-
       for (var i = 0; i < bookings.length; i++) {
         var booking = bookings[i];
         var listItem = document.createElement("li");
-        listItem.textContent = booking.name + " | " + booking.email + " | " + booking.phone;
+        listItem.textContent =
+          booking.name + " | " + booking.email + " | " + booking.phone;
+
+        var deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.setAttribute("data-index", i);
+        deleteButton.addEventListener("click", function () {
+          var index = parseInt(this.getAttribute("data-index"));
+          deleteBooking(index);
+        });
+
+        listItem.appendChild(deleteButton);
         bookingsList.appendChild(listItem);
       }
+    }
+  }
+  function deleteBooking(index) {
+    var bookings = localStorage.getItem("bookings");
+    if (bookings) {
+      bookings = JSON.parse(bookings);
+
+      bookings.splice(index, 1);
+      localStorage.setItem("bookings", JSON.stringify(bookings));
+
+      displayBookings();
     }
   }
